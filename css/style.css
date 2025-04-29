@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: cardFadeIn 0.8s ease-out;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(195, 207, 226, 0.2);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #4a6fa5;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4a6fa5, transparent);
+}
+
+.subtitle {
+    color: #7b8aa1;
+    font-size: 1rem;
+}
+
+.fact-container {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-left: 5px solid #4a6fa5;
+    position: relative;
+    min-height: 150px;
+    /* Minimum yüksekliği arttırdım */
+    max-height: none;
+    /* Maximum yükseklik sınırını kaldırdım */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow-wrap: break-word;
+    /* Uzun kelimelerin düzgün görüntülenmesi için */
+}
+
+.fact-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.fact {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    /* Satır aralığını arttırdım */
+    color: #333;
+    text-align: center;
+    word-break: break-word;
+    /* Uzun kelimelerin kırılması için */
+    hyphens: auto;
+    /* Gerektiğinde kelimelerin hecelere bölünmesi */
+}
+
+.counter {
+    font-size: 0.8rem;
+    color: #7b8aa1;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4a6fa5 0%, #6e8cbb 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(74, 111, 165, 0.3);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(74, 111, 165, 0.5);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button-text {
+    margin-right: 10px;
+}
+
+.button-icon {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .fact {
+        font-size: 1rem;
+    }
+}
