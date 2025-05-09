@@ -39,7 +39,7 @@ const culturalFacts = [
 ];
 
 let clickCount = 0;
-const maxClicks = 3;
+const maxClicks = 30;
 // Gösterilen bilgileri takip etmek için bir dizi ekleyelim
 let shownFactIndices = [];
 
